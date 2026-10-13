@@ -2,14 +2,15 @@
 import Base from '../layouts/Base.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import DealForm from '../components/DealForm.astro';
 import {brand,domain} from '../data/cities';
 const url=`https://${domain}/fix-and-flip-loan-costs/`;
-const faqs=[{q:"How detailed should my repair scope be?",a:"Detailed enough that someone who has not seen the house can understand the work. A room-by-room list with the major systems called out works well."},{q:"What if I do not have contractor bids yet?",a:"Say so and describe how you built your scope. It is better to flag what is still unconfirmed than to guess."},{q:"Where do I find nearby sales?",a:"A real estate agent or the public records for the county can show recent sales. Pick homes of similar size and condition in the same borough or neighborhood."}];
+const faqs=[{q:"How detailed should my repair scope be?",a:"Detailed enough that someone who has not seen the house can understand the work. A room-by-room list with the major systems called out works well."},{q:"What if I do not have contractor bids yet?",a:"Say so and describe how you built your scope. It is better to flag what is still unconfirmed than to guess."},{q:"Where do I find nearby sales?",a:"A real estate agent or the public records for the county can show recent sales. Pick homes of similar size and condition in the same city or neighborhood."}];
 const jsonld=[{'@context':'https://schema.org','@type':'WebPage',name:'Fix and Flip Project Checklist',url,description:'A checklist for preparing a fix and flip project in Tucson Metro: the property, the repair scope, the resale support and the local items to check first.',isPartOf:{'@type':'WebSite',name:brand,url:`https://${domain}/`}},{'@context':'https://schema.org','@type':'FAQPage',mainEntity:faqs.map(f=>({'@type':'Question',name:f.q,acceptedAnswer:{'@type':'Answer',text:f.a}}))},{'@context':'https://schema.org','@type':'BreadcrumbList',itemListElement:[{'@type':'ListItem',position:1,name:'Home',item:`https://${domain}/`},{'@type':'ListItem',position:2,name:'Fix and Flip Project Checklist',item:url}]}];
 ---
-<Base title="Fix and Flip Project Checklist | Tucson Fix & Flip Loan" description="A checklist for preparing a fix and flip project in Tucson Metro: the property, the repair scope, the resale support and the local items to check first." path="/fix-and-flip-loan-costs/" jsonld={jsonld} fabHref="/#deal-form">
+<Base title="Fix and Flip Project Checklist | Tucson Fix & Flip Loan" description="A checklist for preparing a fix and flip project in Tucson Metro: the property, the repair scope, the resale support and the local items to check first." path="/fix-and-flip-loan-costs/" jsonld={jsonld} fabHref="#deal-form">
 <Header base="/"/><main>
-<section class="guide-hero"><div class="container"><h1>Fix and Flip Project Checklist</h1></div></section>
+<section class="hero" id="main"><div class="container hero__inner"><div class="hero__content"><h1>Fix and Flip <em>Project Checklist</em></h1><div class="hero__rule"></div><p>Tell us about your Tucson Metro property, the renovation plan and the intended resale. We are connectors and use these details to introduce your project to funding sources.</p></div><DealForm cityName="Tucson Metro" location="Project Checklist Guide" /></div></section>
 <section class="section"><div class="container guide-prose">
 <p>A complete package is the fastest way to get a clear answer. This checklist covers what funding sources usually want to see and Tucson Metro items worth checking before you send anything.</p>
 <p>We are connectors. We use what you send to introduce your project to funding sources, so the clearer the package, the smoother the conversation.</p>
@@ -28,7 +29,7 @@ const jsonld=[{'@context':'https://schema.org','@type':'WebPage',name:'Fix and F
 <ul class="guide-list">
 <li>A room-by-room list of work, with major systems named</li>
 <li>Who will do the work and the timeline you expect</li>
-<li>Permit needs, confirmed with the borough or city office</li>
+<li>Permit needs, confirmed with the city or county office</li>
 <li>Safety and structural items listed ahead of cosmetic ones</li>
 </ul>
 </div></section>
