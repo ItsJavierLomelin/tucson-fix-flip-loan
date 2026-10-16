@@ -1,0 +1,55 @@
+# Pages CMS configuration - https://pagescms.org
+# Pilot: edit this Astro site's content in the browser at https://app.pagescms.org
+# Copy lives inside .astro pages and .ts data files, so everything opens in a code editor.
+media:
+  input: public
+  output: /
+content:
+  - name: homepage
+    label: Homepage
+    type: file
+    path: src/pages/index.astro
+    format: code
+    operations:
+      create: false
+      delete: false
+  - name: city-content
+    label: City page content
+    type: file
+    path: src/data/cities.ts
+    format: code
+    operations:
+      create: false
+      delete: false
+  - name: guide-vs-hard-money
+    label: "Guide: Fix and flip vs hard money"
+    type: file
+    path: src/pages/fix-and-flip-vs-hard-money.astro
+    format: code
+    operations:
+      create: false
+      delete: false
+  - name: guide-how-funding-works
+    label: "Guide: How funding works in Arizona"
+    type: file
+    path: src/pages/how-fix-and-flip-funding-works-in-arizona.astro
+    format: code
+    operations:
+      create: false
+      delete: false
+  - name: privacy
+    label: Privacy policy
+    type: file
+    path: src/pages/privacy.astro
+    format: code
+    operations:
+      create: false
+      delete: false
+  - name: terms
+    label: Terms
+    type: file
+    path: src/pages/terms.astro
+    format: code
+    operations:
+      create: false
+      delete: false
